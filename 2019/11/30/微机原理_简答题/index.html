@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    微机原理_简答题 |
+    
+    zhz</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-微机原理_简答题" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      微机原理_简答题
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2019/11/30/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86_%E7%AE%80%E7%AD%94%E9%A2%98/" class="article-date">
+  <time datetime="2019-11-30T07:14:31.000Z" itemprop="datePublished">2019-11-30</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <h3 id="在计算机上运行汇编语言程序的步骤是什么？"><a href="#在计算机上运行汇编语言程序的步骤是什么？" class="headerlink" title="在计算机上运行汇编语言程序的步骤是什么？"></a>在计算机上运行汇编语言程序的步骤是什么？</h3><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">（1）用编译文件如EDIT编译源文件，形成.ASM文件。</span><br><span class="line">（2）用汇编程序（MASM）把.ASM源文件汇编成目标文件.OBJ。</span><br><span class="line">（3）用连接程序（LINK）把.OBJ文件转换成.EXE可执行文件。</span><br><span class="line">（4）运行可执行文件.EXE。</span><br><span class="line">（5）若有错，使用DEBUG进行调试。</span><br></pre></td></tr></table></figure>
+<h3 id="CPU响应中断的条件是什么？简述中断处理过程"><a href="#CPU响应中断的条件是什么？简述中断处理过程" class="headerlink" title="CPU响应中断的条件是什么？简述中断处理过程"></a>CPU响应中断的条件是什么？简述中断处理过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CPU响应中断要有三个条件：</span><br><span class="line">    外设提出中断申请、本中断位未被屏蔽、中断允许。</span><br><span class="line">可屏蔽中断处理的过程一般分为：</span><br><span class="line">    中断请求、中断响应、保护现场、转入执行中断服务子程序、恢复现场、中断返回。</span><br><span class="line">CPU在响应外部中断，并转入相应中断服务子程序的过程中，要依次做以下工作：</span><br><span class="line">    （1） 从数据总线上读取中断类型号，将其存入内部暂存器。</span><br><span class="line">    （2） 将标志寄存器PSW的值入栈。</span><br><span class="line">    （3） 将PSW中的中断允许标志IF和单步TF清0，</span><br><span class="line">          以屏蔽外部其他中断请求，避免CPU以单步方式执行中断处理子程序。</span><br><span class="line">    （4） 保护断点。将当前指令下面一条指令的段地址CS和指令指针IP的值入栈，</span><br><span class="line">          中断处理完毕后，能正确返回到主程序继续执行。</span><br><span class="line">    （5） 根据中断类型号到中断向量表中找到中断向量，转入相应中断服务子程序。</span><br><span class="line">    （6） 中断处理程序结束以后，从堆栈中依次弹出IP、CS和PSW，</span><br><span class="line">          然后返回主程序断点处，继续执行原来的程序。</span><br></pre></td></tr></table></figure>
+<h3 id="在基于8086的微机计算机系统中，存储器是如何组织的？是如何与处理器总线连接的？"><a href="#在基于8086的微机计算机系统中，存储器是如何组织的？是如何与处理器总线连接的？" class="headerlink" title="在基于8086的微机计算机系统中，存储器是如何组织的？是如何与处理器总线连接的？"></a>在基于8086的微机计算机系统中，存储器是如何组织的？是如何与处理器总线连接的？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">8086为16位处理器，可访问1M字节的存储器空间，</span><br><span class="line">1M字节的存储器分为两个512K字节的存储体，命名为偶字节体和奇字节体；</span><br><span class="line">偶体的数据线连接D7~D0，选择信号接地址线A0；</span><br><span class="line">奇体的数据线连接D15~D8，选择信号接BHE（非）信号；</span><br><span class="line">BHE^信号有效时允许访问奇体中的高字节存储单元，</span><br><span class="line">实现8086的低字节访问、高字节访问及字访问。</span><br></pre></td></tr></table></figure>
+<h3 id="简述主机与外设进行数据交换的几种常用方式。"><a href="#简述主机与外设进行数据交换的几种常用方式。" class="headerlink" title="简述主机与外设进行数据交换的几种常用方式。"></a>简述主机与外设进行数据交换的几种常用方式。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">无条件传送方式、程序查询方式、中断方式、DMA传送。</span><br><span class="line">（1）无条件传送方式：</span><br><span class="line">        常用于简单设备，处理器认为它们总是处于就绪状态，随时进行数据传送。</span><br><span class="line">（2）程序查询方式：</span><br><span class="line">        处理器首先查询外设工作状态，在外设就绪时进行数据传送。</span><br><span class="line">（3）中断方式：</span><br><span class="line">        外设在准备就绪的条件下通过请求引脚信号，主动向处理器提出交换数据的请求。</span><br><span class="line">        处理器无其他却更紧迫任务，则执行中断服务程序完成一次数据传送。</span><br><span class="line">（4）DMA传送：</span><br><span class="line">        DMA控制器可接管总线，作为总线的主控设备，</span><br><span class="line">        通过系统总线来控制存储器和外设直接进行数据交换。</span><br><span class="line">        此种方式适用于需要大量数据高速传送的场合。</span><br></pre></td></tr></table></figure>
+<h3 id="8086CPU-系统中为什么要用地址锁存器？当用74LS373芯片作为地址锁存器时需要多少片74LS373芯片？"><a href="#8086CPU-系统中为什么要用地址锁存器？当用74LS373芯片作为地址锁存器时需要多少片74LS373芯片？" class="headerlink" title="8086CPU 系统中为什么要用地址锁存器？当用74LS373芯片作为地址锁存器时需要多少片74LS373芯片？"></a>8086CPU 系统中为什么要用地址锁存器？当用74LS373芯片作为地址锁存器时需要多少片74LS373芯片？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">8086CPU由于引脚数量少，</span><br><span class="line">其地址总线采用了分时复用的双重总线（A19-A16/S6-S3和AD15-AD0以及BHE（非）/S7）；</span><br><span class="line">仅在总线周期的T1时钟周期输出地址信号，而在整个总线周期中地址信号需要保持不变，</span><br><span class="line">这就需用地址锁存器将T1周期发出的地址信号锁存起来以在整个总线周期都能使用；</span><br><span class="line">为此8086CPU在T1周期提供地址锁存允许信号ALE（正脉冲），</span><br><span class="line">用ALE的下降沿将地址信息锁存在地址锁存器中。</span><br><span class="line">共需3片73LS373芯片用作地址锁存器，锁存信息A19-A0和BHE（非）。</span><br></pre></td></tr></table></figure>
+
+<h3 id="简述存储系统层次结构及各层存储部件的特点。"><a href="#简述存储系统层次结构及各层存储部件的特点。" class="headerlink" title="简述存储系统层次结构及各层存储部件的特点。"></a>简述存储系统层次结构及各层存储部件的特点。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">为解决容量、速度和价格的矛盾，存储系统采用金字塔型层次结构，</span><br><span class="line">单位价格和速度自上而下逐层减少，容量自上而下逐层增加。</span><br><span class="line">存储系统的各层存储部件自上而下依次是：CPU寄存器、高速缓存、主存存储器（RAM/ROM），辅助存储器如磁盘、光盘等。</span><br><span class="line">CPU寄存器、高速缓存器集成在CPU芯片上，</span><br><span class="line">对用户说，是透明的，它们用于暂存主存和处理器交互的数据，以减少频繁读取主存而影响处理器速度；</span><br><span class="line">主存储器则可和处理器直接交换数据，而辅助存储器必须经过主存存储器，才可与处理器进行数据交换。</span><br></pre></td></tr></table></figure>
+
+<h3 id="什么是接口？接口的基本功能是什么？"><a href="#什么是接口？接口的基本功能是什么？" class="headerlink" title="什么是接口？接口的基本功能是什么？"></a>什么是接口？接口的基本功能是什么？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">微机接口是位于主机和外设之间的一些转换电路的总称。</span><br><span class="line">通用接口具有以下功能：</span><br><span class="line">（1） 设置数据的寄存、缓冲逻辑，以适应CPU与外设之间的速度差异，</span><br><span class="line">      协调快速CPU与慢速的外设之间数据传送的矛盾和时序差异。</span><br><span class="line">（2） 能够进行信息格式的转换，例如串行与并行的转换。</span><br><span class="line">（3） 能够协调CPU和外设在信息的类型和高低电平高低方面之间的差异，如电平转换驱动、数/模或模/数转等。</span><br><span class="line">（4） 采集外设的信息传送给CPU，接收CPU发出的控制命令及启动外设工作，设置中断和DMA控制逻辑。</span><br><span class="line">（5） 地址译码和设备选择功能，识别CPU要访问的外设。</span><br></pre></td></tr></table></figure>
+<h3 id="8086-8088-执行了一个总线周期-是指8086-8088做了哪些可能的操作？基本总线周期如何组成？在一个典型的读存储器总线周期中，地址信号、ALE信号、RD（非）信号、数据信号分别在何时产生？"><a href="#8086-8088-执行了一个总线周期-是指8086-8088做了哪些可能的操作？基本总线周期如何组成？在一个典型的读存储器总线周期中，地址信号、ALE信号、RD（非）信号、数据信号分别在何时产生？" class="headerlink" title="8086/8088 执行了一个总线周期 是指8086/8088做了哪些可能的操作？基本总线周期如何组成？在一个典型的读存储器总线周期中，地址信号、ALE信号、RD（非）信号、数据信号分别在何时产生？"></a>8086/8088 执行了一个总线周期 是指8086/8088做了哪些可能的操作？基本总线周期如何组成？在一个典型的读存储器总线周期中，地址信号、ALE信号、RD（非）信号、数据信号分别在何时产生？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 8086/8088执行了一个总线周期是指：</span><br><span class="line">（1）8086/8088可能从片外的存储器取指令。</span><br><span class="line">（2）8086/8088可能对片外的存储器或I/O接口进行了一次读/写数据的操作。</span><br><span class="line">2. 基本总线周期由T1-T4四个时钟周期组成。</span><br><span class="line">3. 在一个典型的读存储器总线周期中，</span><br><span class="line">地址信号在T1周期内产生，</span><br><span class="line">ALE信号在T1周期内产生，</span><br><span class="line">RD（非）信号在T2周期产生，</span><br><span class="line">数据信号一般在T3周期产生。</span><br><span class="line">若存储器在T3内来不及提供数据，</span><br><span class="line">8086/8088会在总线周期中的T3后插入等待状态Tw，存储器将在某个Tw中给出数据。</span><br></pre></td></tr></table></figure>
+<h3 id="什么是中断类型码、中断向量、中断向量表？在基于8086-8088的微机系统中，中断类型码和中断向量之间有什么关系？"><a href="#什么是中断类型码、中断向量、中断向量表？在基于8086-8088的微机系统中，中断类型码和中断向量之间有什么关系？" class="headerlink" title="什么是中断类型码、中断向量、中断向量表？在基于8086/8088的微机系统中，中断类型码和中断向量之间有什么关系？"></a>什么是中断类型码、中断向量、中断向量表？在基于8086/8088的微机系统中，中断类型码和中断向量之间有什么关系？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">中断类型码：处理机可处理的每种中断的编号。</span><br><span class="line">中断向量：中断处理程序的入口地址，由处理机自动寻址。</span><br><span class="line">中断向量表：存放所有类型中断处理程序入口地址的一个默认的内存区域。</span><br><span class="line">在8086/8088系统中，中断类型码乘4得到向量表的地址指针从此读出4字节内容即为中断向量。</span><br></pre></td></tr></table></figure>
+<h3 id="比较8255A三种工作方式的应用场合有何区别？"><a href="#比较8255A三种工作方式的应用场合有何区别？" class="headerlink" title="比较8255A三种工作方式的应用场合有何区别？"></a>比较8255A三种工作方式的应用场合有何区别？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">方式0：适用于同步传送和查询传送方式。</span><br><span class="line">方式1：适用于外设在能提供选通信号或数据接收信号的场合，</span><br><span class="line">       且采用中断传送方式</span><br><span class="line">方式2：适用于一个并行外设既可以作为输入设备，又可以作为输出设备</span><br><span class="line">       并且输入输出不会同时进行的场合。</span><br></pre></td></tr></table></figure>
+<h3 id="中断时为什么要安排中断优先级？-什么情况下程序会发生中断嵌套？"><a href="#中断时为什么要安排中断优先级？-什么情况下程序会发生中断嵌套？" class="headerlink" title="中断时为什么要安排中断优先级？ 什么情况下程序会发生中断嵌套？"></a>中断时为什么要安排中断优先级？ 什么情况下程序会发生中断嵌套？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">处理器随时可能会收到多个中断源提出的中断请求，</span><br><span class="line">因此，为每一个中断源分配一级中断优先权，</span><br><span class="line">根据他们的高低顺序决定响应的先后顺序。</span><br><span class="line">必须在中断服务中 开中断，程序才会发生中断嵌套。</span><br></pre></td></tr></table></figure>
+<h3 id="简述DMA传送方式的特点。"><a href="#简述DMA传送方式的特点。" class="headerlink" title="简述DMA传送方式的特点。"></a>简述DMA传送方式的特点。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 它是一种高速的数据传输操作，</span><br><span class="line">   允许在外部设备和存储器之间直接读写数据，</span><br><span class="line">   既不通过CPU也不需要CPU干预，</span><br><span class="line">   整个数据传输过程是在一个&quot;DMA控制器&quot;的控制下进行的。</span><br><span class="line">2. 不需要保护现场，恢复现场等工作，从而使DMA方式的工作速度大大加快。</span><br><span class="line">3. DMA方式开始之前需要对DMA控制器进行初始化。</span><br></pre></td></tr></table></figure>
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="http://yoursite.com/2019/11/30/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86_%E7%AE%80%E7%AD%94%E9%A2%98/" data-id="ck64tor7v0003jgvp9i0ob0jc" class="article-share-link">
+                                            Share
+                                        </a>
+                                        
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2019/11/30/C%E8%AF%AD%E8%A8%80_%E7%BC%96%E7%A8%8B%E9%A2%98/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            C语言_编程题
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/11/20/python_kivy%E6%89%8B%E6%9C%BA%E7%BC%96%E7%A8%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">Olde posts</strong>
+        <div class="article-nav-title">python_kivy手机编程</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 zhz</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/ocean/zhz.png" alt="zhz"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>

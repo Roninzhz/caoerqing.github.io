@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    C语言_编程题 |
+    
+    zhz</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-C语言_编程题" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      C语言_编程题
+    </h1>
+  
+  
+
+
+
+
+            </header>
+            
+
+                
+                    <div class="article-meta">
+                        <a href="/2019/11/30/C%E8%AF%AD%E8%A8%80_%E7%BC%96%E7%A8%8B%E9%A2%98/" class="article-date">
+  <time datetime="2019-11-30T07:15:18.000Z" itemprop="datePublished">2019-11-30</time>
+</a>
+                            
+                    </div>
+                    
+
+                        
+                            
+    <div class="tocbot"></div>
+
+
+
+
+
+                                
+
+                                    <div class="article-entry" itemprop="articleBody">
+                                        
+
+
+                                            
+
+                                                
+                                                                    <h3 id="求11-22-33-44-55的值"><a href="#求11-22-33-44-55的值" class="headerlink" title="求11+22+33+44+55的值"></a>求11+22+33+44+55的值</h3><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int sum(int);</span><br><span class="line">int powers(int);</span><br><span class="line">void main() &#123;//主函数</span><br><span class="line">	int n;</span><br><span class="line">	n = 5;</span><br><span class="line">	printf(&quot;%d&quot;, sum(n));</span><br><span class="line">&#125;</span><br><span class="line">int sum(int x) &#123;//加和</span><br><span class="line">	int i, s = 0;</span><br><span class="line">	for ( i = 1; i &lt;= x; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		s += powers(i);</span><br><span class="line">	&#125;</span><br><span class="line">	return s;</span><br><span class="line">&#125;</span><br><span class="line">int powers(int y) &#123;//生成对应的数</span><br><span class="line">	int i, p;</span><br><span class="line">	p = 1;</span><br><span class="line">	/*for ( i = y; i &lt;= y; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		p = y * 10 + y;</span><br><span class="line">	&#125;*/</span><br><span class="line">	if (y&lt;=5)</span><br><span class="line">	&#123;</span><br><span class="line">		p = y * 10 + y;</span><br><span class="line">	&#125;</span><br><span class="line">	return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="编写递归函数reverse-int-n-实现将整数n逆序输出，主函数调用"><a href="#编写递归函数reverse-int-n-实现将整数n逆序输出，主函数调用" class="headerlink" title="编写递归函数reverse(int n)实现将整数n逆序输出，主函数调用"></a>编写递归函数reverse(int n)实现将整数n逆序输出，主函数调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">void reverse(int n) &#123;</span><br><span class="line">	if (n&lt;=9)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d&quot;, n);//个位数直接输出</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d&quot;, n % 10);//取余数并输出</span><br><span class="line">		reverse(n / 10);//将位数减少，并继续判断</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void main() &#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	reverse(n);//调用子函数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="编写fun（）求斐波那契数列中大于t的最小的数，当t-1000，fun（n）-1597"><a href="#编写fun（）求斐波那契数列中大于t的最小的数，当t-1000，fun（n）-1597" class="headerlink" title="编写fun（）求斐波那契数列中大于t的最小的数，当t=1000，fun（n）=1597"></a>编写fun（）求斐波那契数列中大于t的最小的数，当t=1000，fun（n）=1597</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int fun(int t) &#123;</span><br><span class="line">	int i, f0 = 0, f1 = 1, f2 = f0 + f1;</span><br><span class="line">	while (f2 &lt;= t) &#123;</span><br><span class="line">		f0 = f1;</span><br><span class="line">		f1 = f2;</span><br><span class="line">		f2 = f0 + f1;</span><br><span class="line">	&#125;</span><br><span class="line">	return f2;</span><br><span class="line">&#125;</span><br><span class="line">void main() &#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	printf(&quot;%d&quot;, fun(n));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入5名同学成绩排序输出（从高到低）主函数输出-子函数排序"><a href="#输入5名同学成绩排序输出（从高到低）主函数输出-子函数排序" class="headerlink" title="输入5名同学成绩排序输出（从高到低）主函数输出 子函数排序"></a>输入5名同学成绩排序输出（从高到低）主函数输出 子函数排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#define N 5  //符号常量</span><br><span class="line">int main() &#123;</span><br><span class="line">	int a[N], i;</span><br><span class="line">	float ave;</span><br><span class="line">	void sort(int a[]);  //调用子函数排序</span><br><span class="line">	for ( i = 0; i &lt; N; i++)  //输入</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a);  //排序</span><br><span class="line">	for ( i = 0; i &lt; N; i++)  //输出</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%4d&quot;, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">void sort(int a[]) &#123;</span><br><span class="line">	int i, j, t;</span><br><span class="line">	for ( i =0; i &lt; N; i++) //排序</span><br><span class="line">	&#123;</span><br><span class="line">		for ( j = 0; j &lt; N-1-i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[j]&lt;a[j+1])</span><br><span class="line">			&#123;</span><br><span class="line">				t = a[j];</span><br><span class="line">				a[j] = a[j + 1];</span><br><span class="line">				a[j + 1] = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入正整数n，生成一张阶乘表，调用函数fact（n）-函数类型double"><a href="#输入正整数n，生成一张阶乘表，调用函数fact（n）-函数类型double" class="headerlink" title="输入正整数n，生成一张阶乘表，调用函数fact（n） 函数类型double"></a>输入正整数n，生成一张阶乘表，调用函数fact（n） 函数类型double</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">double fact(int n);</span><br><span class="line">void main() &#123;</span><br><span class="line">	int i, n;</span><br><span class="line">	double result;</span><br><span class="line">	printf(&quot;enter n\n&quot;);</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	for (i = 0; i &lt;= n; i++) &#123;</span><br><span class="line">		result = fact(i);</span><br><span class="line">		printf(&quot;%d!=%.0f\n&quot;, i, result);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">double fact(int n) &#123;</span><br><span class="line">	int i;</span><br><span class="line">	double product = 1;</span><br><span class="line">	for (i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">		product *= i;</span><br><span class="line">	&#125;</span><br><span class="line">	return product;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输出字符串，判断是否为回文数"><a href="#输出字符串，判断是否为回文数" class="headerlink" title="输出字符串，判断是否为回文数"></a>输出字符串，判断是否为回文数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">main() &#123;</span><br><span class="line">	int i, n;</span><br><span class="line">	char str[80];</span><br><span class="line">	printf(&quot;请输入字符串，以判断是否为回文数！\n&quot;);</span><br><span class="line">	gets(str);</span><br><span class="line">	n = strlen(str);</span><br><span class="line">	for ( i = 0; i &lt; n/2; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (str[i] != str[n - 1 - i])</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;NO&quot;);</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (i ==n/2)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;YES&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                                                                        
+                                    </div>
+                                    <footer class="article-footer">
+                                        <a data-url="http://yoursite.com/2019/11/30/C%E8%AF%AD%E8%A8%80_%E7%BC%96%E7%A8%8B%E9%A2%98/" data-id="ck64tor7j0000jgvp6nbgd7qn" class="article-share-link">
+                                            Share
+                                        </a>
+                                        
+                                    </footer>
+
+    </div>
+
+    
+        
+  <nav class="article-nav">
+    
+      <a href="/2019/11/30/%E8%8B%B1%E8%AF%AD%E4%BD%9C%E6%96%87/" class="article-nav-link">
+        <strong class="article-nav-caption">Newer posts</strong>
+        <div class="article-nav-title">
+          
+            英语—_作文
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/11/30/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86_%E7%AE%80%E7%AD%94%E9%A2%98/" class="article-nav-link">
+        <strong class="article-nav-caption">Olde posts</strong>
+        <div class="article-nav-title">微机原理_简答题</div>
+      </a>
+    
+  </nav>
+
+
+            
+
+                
+                    
+                        
+
+
+</article>
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2020 zhz</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+<aside class="sidebar sidebar-specter">
+  
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/ocean/zhz.png" alt="zhz"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">Home</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">Archives</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">Gallery</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">About</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>
